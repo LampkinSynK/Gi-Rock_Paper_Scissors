@@ -6,6 +6,7 @@ const rockButton = document.querySelector('[data-rock]');
 const paperButton = document.querySelector('[data-paper]');
 const counter = document.querySelector('[data-screen]');
 const compCounter = document.querySelector('[data-compScreen]');
+const decision = document.querySelector('[data-decision]');
 
 
 
@@ -28,23 +29,26 @@ randomComp = () => {
 
 checkMatchUp = (player, comp) => { 
     if (player===comp) {
-        alert('Tie');
+        decision.innerHTML = "It's a Tie!";
         return;
     }
     else if (((player==='Rock')&&(comp==='Scissors')||((player==='Paper')&&(comp==='Rock')||((player==='Scissors')&&(comp==='Paper'))))){
         newValue = parseFloat(counter.innerText) + 1;
         counter.innerHTML = newValue;
-        console.log(counter.innerHTML);
+        decision.innerHTML = 'You Win!';
     }
     else {
         newValue = parseFloat(compCounter.innerText) + 1;
         compCounter.innerHTML = newValue;
-        console.log(counter.innerHTML);
+        decision.innerHTML = 'You Lose!';
     }
 }
 
-
-
+reset = () => {
+    counter.innerHTML = 0;
+    compCounter.innerHTML = 0;
+    decision.innerHTML = '';
+}
 
 scissorsButton.addEventListener('click', button => {
     playerValue = 'Scissors';

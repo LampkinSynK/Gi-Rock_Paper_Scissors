@@ -5,20 +5,36 @@
     font-weight: normal;
     font-size: 40px;
     color: white;
+    
 }
 
 body {
+    
     background-image: url(images/hellokitty.jpeg);
     background-size: 100vw 100vh;
     background-repeat: no-repeat;
 }
 
 .counter {
+    display: flex;
     font-size: 2em;
     color: blue;
     grid-area: 1 / 3 / 2 /3;
     text-align: center;
-    margin-top: 5vw;
+    align-items: center;
+    justify-content: space-around;
+    
+    
+}
+
+.comp_counter {
+    display: flex;
+    font-size: 2em;
+    color: rgb(255, 0, 0);
+    grid-area: 1 / 5 / 2 /5;
+    text-align: center;
+    align-items: center;
+    justify-content: space-around;
     
 }
 
@@ -31,7 +47,7 @@ body {
 
     display: grid;
     grid-template-columns: 14.2vw 14.2vw 14.2vw 14.2vw 14.2vw 14.2vw 14.2vw;
-    grid-template-rows: 14.2vw 14.2vw 14.2vw 14.2vw 14.2vw 14.2vw 14.2vw;
+    grid-template-rows: 13vw 13vw 13vw 13vw;
 
     
 }
@@ -44,7 +60,16 @@ body {
 .rock {
     cursor: pointer;
     grid-area: 3 / 3 / 3 /3;
-    
+}
+
+.rock:hover {
+    transform: scale(1.1);
+}
+.paper:hover {
+    transform: scale(1.1);
+}
+.scissor:hover {
+    transform: scale(1.1);
 }
 
 .paper {
@@ -53,14 +78,44 @@ body {
     
 }
 
-.choose_container > img:hover{
-    transform: scale(1.1);
+.decision {
+    grid-area: 2 / 4 / 2 /4;
+    text-align: center;
+    justify-content: center;
+    margin-top: 2em;
 }
+
+
 
 #counter_border {
     grid-area: 1 / 3 / 2 /3;
+    
+    
 }
 
-.comp_border {
+#comp_border {
     grid-area: 1 / 5 / 2 /5;
+}
+
+.reset {
+    display: inline-block;
+    outline: 0;
+    cursor: pointer;
+    border-radius: 6px;
+    border: 2px solid #ff4742;
+    color: #ff4742;
+    background: 0 0;
+    padding: 8px;
+    box-shadow: rgba(0, 0, 0, 0.07) 0px 2px 4px 0px, rgba(0, 0, 0, 0.05) 0px 1px 1.5px 0px;
+    font-weight: 800;
+    font-size: 16px;
+    height: 42px;
+    margin-top: 6em;
+    grid-area: 1 / 4 / 2 /4;
+    
+}
+
+.reset:hover {
+    background-color: #ff4742;
+    color: #fff;
 }

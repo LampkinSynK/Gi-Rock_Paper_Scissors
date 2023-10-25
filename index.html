@@ -9,14 +9,18 @@
 </head>
 <body>
     <section class="choose_container">
-        <img class="responsive-img" id="counter_border" src="images/borderimg.png" alt="borderimg" height="250vh" width="250vw">
-        <img class="comp_border" src="images/borderimg.png" alt="borderimg" height="250vh" width="250vw">
+        <img class="responsive-img" id="counter_border" src="images/borderimg.png" alt="borderimg">
+        <img class="responsive-img"  id="comp_border" src="images/borderimg.png" alt="borderimg">
+        <button class="reset" onclick="reset()">Reset</button>
         
         <div data-screen class="counter">0</div>
-        <div data-compScreen class="">0</div>
-        <img data-rock class="rock" src="images/rock.png" alt="rock" height="200vh" width="200vw">
-        <img data-paper class="paper" src="images/paper.png" alt="paper" height="200vh" width="200vw">
-        <img data-scissor class="scissor" src="images/scissors.png" alt="scissors" height="200vh" width="200vw">
+        <div data-compScreen class="comp_counter">0</div>
+        <div data-decision class="decision"></div>
+        
+            <img data-rock class="rock" src="images/rock.png" alt="rock" height="200vh" width="200vw">
+            <img data-paper class="paper" src="images/paper.png" alt="paper" height="200vh" width="200vw">
+            <img data-scissor class="scissor" src="images/scissors.png" alt="scissors" height="200vh" width="200vw">
+       
     </section>
 </body>
 <script src="script.js" defer></script>
