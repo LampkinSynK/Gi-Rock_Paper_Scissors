@@ -4,6 +4,8 @@ let playerValue ='';
 const scissorsButton = document.querySelector('[data-scissor]');
 const rockButton = document.querySelector('[data-rock]');
 const paperButton = document.querySelector('[data-paper]');
+const counter = document.querySelector('[data-screen]');
+const compCounter = document.querySelector('[data-compScreen]');
 
 
 
@@ -25,23 +27,23 @@ randomComp = () => {
 
 
 checkMatchUp = (player, comp) => { 
-    if (player===comp) return('');
-    
-    switch (player) {
-        case 'Rock':
-            if (comp === 'Paper') return(false); 
-            if (comp === 'Scissors') return(true); 
-            break;
-        case 'Paper':
-            if (comp === 'Scissors') return(false); 
-            if (comp === 'Rock') return(true); 
-            break;
-        case 'Scissors':
-            if (comp === 'Rock') return(false); 
-            if (comp === 'Paper') return(true); 
-            break;
+    if (player===comp) {
+        alert('Tie');
+        return;
+    }
+    else if (((player==='Rock')&&(comp==='Scissors')||((player==='Paper')&&(comp==='Rock')||((player==='Scissors')&&(comp==='Paper'))))){
+        newValue = parseFloat(counter.innerText) + 1;
+        counter.innerHTML = newValue;
+        console.log(counter.innerHTML);
+    }
+    else {
+        newValue = parseFloat(compCounter.innerText) + 1;
+        compCounter.innerHTML = newValue;
+        console.log(counter.innerHTML);
     }
 }
+
+
 
 
 scissorsButton.addEventListener('click', button => {
@@ -61,3 +63,4 @@ paperButton.addEventListener('click', button => {
     randomComp();
     checkMatchUp(playerValue, compValue);
 })
+

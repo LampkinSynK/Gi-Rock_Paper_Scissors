@@ -4,12 +4,20 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
     <link href="style.css" rel="stylesheet">
 </head>
 <body>
-    <button data-scissor>Scissors</button>
-    <button data-rock>Rock</button>
-    <button data-paper>Paper</button>
+    <section class="choose_container">
+        <img class="responsive-img" id="counter_border" src="images/borderimg.png" alt="borderimg" height="250vh" width="250vw">
+        <img class="comp_border" src="images/borderimg.png" alt="borderimg" height="250vh" width="250vw">
+        
+        <div data-screen class="counter">0</div>
+        <div data-compScreen class="">0</div>
+        <img data-rock class="rock" src="images/rock.png" alt="rock" height="200vh" width="200vw">
+        <img data-paper class="paper" src="images/paper.png" alt="paper" height="200vh" width="200vw">
+        <img data-scissor class="scissor" src="images/scissors.png" alt="scissors" height="200vh" width="200vw">
+    </section>
 </body>
 <script src="script.js" defer></script>
 </html>
