@@ -30,7 +30,7 @@ randomComp = () => {
 checkMatchUp = (player, comp) => { 
     if (player===comp) {
         decision.innerHTML = "It's a Tie!";
-        return;
+        
     }
     else if (((player==='Rock')&&(comp==='Scissors')||((player==='Paper')&&(comp==='Rock')||((player==='Scissors')&&(comp==='Paper'))))){
         newValue = parseFloat(counter.innerText) + 1;
@@ -42,29 +42,52 @@ checkMatchUp = (player, comp) => {
         compCounter.innerHTML = newValue;
         decision.innerHTML = 'You Lose!';
     }
+
+    switch (comp) {
+        case "Rock":
+            changeImage('images/opprockhand.png','opponent_option');
+            break;
+        case "Paper":
+            changeImage('images/opppaperhand.png','opponent_option');
+            break;
+        case "Scissors":
+            changeImage('images/oppscissorshand.png','opponent_option');
+            break;
+        default:
+            break;
+    }
 }
 
 reset = () => {
     counter.innerHTML = 0;
     compCounter.innerHTML = 0;
     decision.innerHTML = '';
+    changeImage('','option');
+    changeImage('','opponent_option');
 }
 
 scissorsButton.addEventListener('click', button => {
     playerValue = 'Scissors';
     randomComp();
     checkMatchUp(playerValue, compValue);
+    changeImage('images/scissorshand.png','option');
+    
 })
 
 rockButton.addEventListener('click', button => {
     playerValue = 'Rock';
     randomComp();
     checkMatchUp(playerValue, compValue);
+    changeImage('images/rockhand.png','option');
 })
 
 paperButton.addEventListener('click', button => {
     playerValue = 'Paper';
     randomComp();
     checkMatchUp(playerValue, compValue);
+    changeImage('images/paperhand.png','option');
 })
 
+changeImage = (img,option) => {
+    document.getElementById(option).src=img;
+}
