@@ -20,6 +20,8 @@ body {
     background-repeat: no-repeat;
 }
 
+
+/* Counter Styling & Positioning*/
 .counter {
     display: flex;
     font-size: 3em;
@@ -44,17 +46,11 @@ body {
     font-family: kawaiiFont;
 }
 
+/* Player Selection Styling */
 .choose_container {
-    /* width: auto;
-    height: auto;
-    display: flex;
-    justify-content: center;
-    align-items: center; */
-
     display: grid;
     grid-template-columns: 14.2vw 14.2vw 14.2vw 14.2vw 14.2vw 14.2vw 14.2vw;
     grid-template-rows: 13vw 13vw 13vw 13vw;
-
     
 }
 
@@ -90,7 +86,7 @@ body {
     justify-content: center;
     margin-top: 2em;
     color: rgb(111, 171, 220);
-    font-size: 1.6em;
+    font-size: 1em;
     font-family: kawaiiFont;
 }
 
@@ -106,6 +102,7 @@ body {
     grid-area: 1 / 5 / 2 /5;
 }
 
+/* Reset Button */
 .reset {
     display: inline-block;
     outline: 0;
