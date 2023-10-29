@@ -1,3 +1,5 @@
+// Initializing Variable
+
 let randomInt = null;
 let compValue = '';
 let playerValue ='';
@@ -9,7 +11,7 @@ const compCounter = document.querySelector('[data-compScreen]');
 const decision = document.querySelector('[data-decision]');
 
 
-
+// Choosing Computer Input
 randomComp = () => {
     randomInt = Math.floor(Math.random() * 3);
 
@@ -26,7 +28,7 @@ randomComp = () => {
     }
 }
 
-
+// Deciding Winner Between computer and player
 checkMatchUp = (player, comp) => { 
     if (player===comp) {
         decision.innerHTML = "It's a Tie!";
@@ -58,6 +60,8 @@ checkMatchUp = (player, comp) => {
     }
 }
 
+
+// Reset Button functionality
 reset = () => {
     counter.innerHTML = 0;
     compCounter.innerHTML = 0;
@@ -66,6 +70,7 @@ reset = () => {
     changeImage('','opponent_option');
 }
 
+// Start User input assignment
 scissorsButton.addEventListener('click', button => {
     playerValue = 'Scissors';
     randomComp();
@@ -87,7 +92,10 @@ paperButton.addEventListener('click', button => {
     checkMatchUp(playerValue, compValue);
     changeImage('images/paperhand.png','option');
 })
+//  End User input assignment
 
+
+//  Change Image based on selection
 changeImage = (img,option) => {
     document.getElementById(option).src=img;
 }
